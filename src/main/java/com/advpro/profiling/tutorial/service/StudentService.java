@@ -34,7 +34,7 @@ public class StudentService {
         return studentCourses;
     }
 
-    public Optional<Student> findStudentWithHighestGpa() {
+    public Student findStudentWithHighestGpa() {
         List<Student> students = studentRepository.findAll();
         Student highestGpaStudent = null;
         double highestGpa = 0.0;
@@ -44,7 +44,7 @@ public class StudentService {
                 highestGpaStudent = student;
             }
         }
-        return Optional.ofNullable(highestGpaStudent);
+        return highestGpaStudent;
     }
 
     public String joinStudentNames() {
